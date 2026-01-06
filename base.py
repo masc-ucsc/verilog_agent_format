@@ -2,7 +2,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from transformers import StoppingCriteria, StoppingCriteriaList 
 # Path to the trained model checkpoint
-model_path = ""
+model_path = "mak372/qwen2.5-coder-livehd-format"
 # Load tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForCausalLM.from_pretrained(model_path, trust_remote_code=True,torch_dtype=torch.float16,device_map="auto")
