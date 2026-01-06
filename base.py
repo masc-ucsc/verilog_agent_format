@@ -46,7 +46,7 @@ class StopOnTokens(StoppingCriteria):
 
 # Tokenize the input prompt
 inputs = tokenizer(prompt, return_tensors="pt")
-inputs = {k: v.to("cuda") for k, v in inputs.items()}
+inputs = {i: j.to("cuda") for i, j in inputs.items()}
 token_count = len(inputs["input_ids"][0])
 print(token_count)
 tokenizer.eos_token = "<|im_end|>"
